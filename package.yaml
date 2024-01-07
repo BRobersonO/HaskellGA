@@ -1,10 +1,10 @@
 name:                ga
 version:             0.1.0.0
-github:              "githubuser/ga"
+github:              "brobersono/HaskellGA"
 license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2024 Author name here"
+author:              "Blake Oakley"
+maintainer:          "brobersono@gmail.com"
+copyright:           "2024 Blake Oakley"
 
 extra-source-files:
 - README.md
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/ga#readme>
+description:         Please see the README on GitHub at <https://github.com/brobersono/HaskellGA#readme>
 
 dependencies:
 - base >= 4.7 && < 5
