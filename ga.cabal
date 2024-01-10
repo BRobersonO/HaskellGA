@@ -63,6 +63,10 @@ test-suite ga-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      CrossoverTests
+      InitializationTests
+      MutationTests
+      SelectionTests
       Paths_ga
   autogen-modules:
       Paths_ga
@@ -73,4 +77,6 @@ test-suite ga-test
       base >=4.7 && <5
     , ga
     , random
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010

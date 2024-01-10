@@ -14,3 +14,4 @@ createPopulation popSize chromoLen = replicateM popSize createChromosome
   where
     createChromosome = replicateM chromoLen (randomRIO (0, 1))
 
+addTwo x y = x + y

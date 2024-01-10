@@ -9,11 +9,12 @@ import Initialization (initialize)
 
 main :: IO ()
 main = do
-    -- pop <- initialize
-    -- print pop
-    -- gen <- globalStdGen
-  let seed = 42
-      gen = mkStdGen seed
-  let rs =  randomRs (1,0) gen :: [Int]
-  print (take 3 rs)
+    pop <- initialize
+    print pop
+
+-- To make things deterministically random
+--   let seed = 42
+--       gen = mkStdGen seed
+--   let rs =  randomRs (1,0) gen :: [Int]
+--   (returns infinite list)
 
