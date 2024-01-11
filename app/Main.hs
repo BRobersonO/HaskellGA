@@ -6,6 +6,9 @@ import System.Random.Stateful
 import System.Random
 import Control.Monad (replicateM)
 import Initialization (initialize)
+import Selection
+import Crossover
+import Mutation
 
 main :: IO ()
 main = do

@@ -4,9 +4,6 @@ import Test.Tasty
 import Test.Tasty.HUnit
 import Initialization (addTwo)
 
--- main :: IO ()
--- main = putStrLn "Test undefined"
-
 initializationTests :: TestTree
 initializationTests = testGroup "initialization tests"
     [
