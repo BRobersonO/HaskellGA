@@ -13,7 +13,8 @@ import Mutation
 main :: IO ()
 main = do
     pop <- initialize
-    print pop
+    chromos <- select pop
+    print chromos
 
 -- To make things deterministically random
 --   let seed = 42
