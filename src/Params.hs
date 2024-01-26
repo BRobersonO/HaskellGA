@@ -11,3 +11,6 @@ populationSize = 3
 
 tournamentSize :: Int
 tournamentSize = 2
+
+numOfGenerations :: Int
+numOfGenerations = 10

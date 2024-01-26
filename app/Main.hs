@@ -9,12 +9,14 @@ import Initialization (initialize)
 import Selection
 import Crossover
 import Mutation
+import Lib (createNewPop)
+import Params as Param
 
 main :: IO ()
 main = do
     pop <- initialize
-    chromos <- select pop
-    print chromos
+    newpop <- createNewPop pop [] Param.populationSize
+    print newpop
 
 -- To make things deterministically random
 --   let seed = 42
