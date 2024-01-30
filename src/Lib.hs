@@ -1,12 +1,21 @@
 module Lib where
 
 import CustomTypes
-import Params
+import Params as Param
 import System.Random
 import Selection (select)
 import Crossover (crossover)
+import Initialization (initialize)
+import qualified Params as Param
 
-createNewPop :: Population -> [IO Chromosome] -> Int -> IO [Chromosome]
+run = runGenerations initialize Param.numOfGenerations
+
+runGenerations :: IO Population -> Int -> IO Population
+runGenerations pop 0     = pop
+runGenerations pop count =
+  runGenerations (pop >>= (\x -> createNewPop x [] Param.populationSize)) (count - 1)
+
+createNewPop :: Population -> [IO Chromosome] -> Int -> IO Population
 createNewPop _          newPop 0       = sequenceA newPop
 createNewPop currentPop newPop count   =
   createNewPop currentPop (getChild : newPop) (count - 1)

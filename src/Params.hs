@@ -1,16 +1,29 @@
 module Params where
 
 mutationRate :: Double
-mutationRate = 0.001
+mutationRate = 0.5
+
+crossoverRate :: Double
+crossoverRate = 1.0
 
 chromosomeLength :: Int
-chromosomeLength = 5
+chromosomeLength = 200
+-- annie's was 200
 
 populationSize :: Int
-populationSize = 3
+populationSize = 100
 
 tournamentSize :: Int
-tournamentSize = 2
+tournamentSize = 3
 
 numOfGenerations :: Int
-numOfGenerations = 10
+numOfGenerations = 5
+-- annie's was 100
+
+{-
+selection methods:
+    proportional
+    random
+    rank
+    tournament
+-}

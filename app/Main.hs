@@ -9,14 +9,13 @@ import Initialization (initialize)
 import Selection
 import Crossover
 import Mutation
-import Lib (createNewPop)
+import Lib (run)
 import Params as Param
 
 main :: IO ()
 main = do
-    pop <- initialize
-    newpop <- createNewPop pop [] Param.populationSize
-    print newpop
+    pop <- run
+    print pop
 
 -- To make things deterministically random
 --   let seed = 42
