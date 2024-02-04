@@ -1,7 +1,7 @@
 module Params where
 
 mutationRate :: Double
-mutationRate = 0.5
+mutationRate = 0.001
 
 crossoverRate :: Double
 crossoverRate = 1.0
@@ -17,7 +17,7 @@ tournamentSize :: Int
 tournamentSize = 3
 
 numOfGenerations :: Int
-numOfGenerations = 5
+numOfGenerations = 100
 -- annie's was 100
 
 {-
