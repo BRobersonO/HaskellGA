@@ -22,5 +22,8 @@ getMostFit fitFunc = maximumBy (\a b -> compare (fitFunc a) (fitFunc b))
 pickOne :: Population -> IO Chromosome
 pickOne pop = (pop !!) <$> randomRIO (0, Param.populationSize - 1)
 
+-- TODO create fitness function module,
+-- add fitness to each individual for measuring purposes
+-- create stats for measuring: bestInGen, avgOfGen, stDv, 95%ConfInt
 fitnessFunc :: [Int] -> Int
 fitnessFunc = sum

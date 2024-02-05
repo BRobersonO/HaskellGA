@@ -1,4 +1,5 @@
 module Params where
+import CustomTypes (CrossoverType (HalfPoint))
 
 mutationRate :: Double
 mutationRate = 0.001
@@ -20,6 +21,14 @@ numOfGenerations :: Int
 numOfGenerations = 100
 -- annie's was 100
 
+{- crossoverTypes include:
+    HalfPoint
+    OnePoint
+-}
+crossoverType :: CrossoverType
+crossoverType = HalfPoint
+
+--TODO add selection methods
 {-
 selection methods:
     proportional

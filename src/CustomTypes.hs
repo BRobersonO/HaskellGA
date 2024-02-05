@@ -6,4 +6,8 @@ type FitnessScore = Int
 
 type Population = [Chromosome]
 
+data CrossoverType =
+      HalfPoint
+    | OnePoint
+
 

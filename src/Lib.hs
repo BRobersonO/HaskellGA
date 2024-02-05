@@ -2,11 +2,9 @@ module Lib where
 
 import CustomTypes
 import Params as Param
-import System.Random
 import Selection (select)
 import Crossover (crossover)
 import Initialization (initialize)
-import qualified Params as Param
 import Mutation (mutate)
 
 run = runGenerations initialize Param.numOfGenerations
@@ -23,5 +21,9 @@ createNewPop currentPop newPop count   =
   where
     getChild = do
         parents <- select currentPop
-        let child = crossover parents
-        return child
+        crossover Param.crossoverType parents
+
+-- TODO other features:
+-- promotion to next gen
+-- non-coding regions
+-- extinction
