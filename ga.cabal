@@ -27,6 +27,7 @@ library
   exposed-modules:
       Crossover
       CustomTypes
+      Fitness
       Initialization
       Lib
       Mutation

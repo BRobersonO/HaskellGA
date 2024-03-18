@@ -4,10 +4,10 @@ type Chromosome =  [Int]
 
 type FitnessScore = Int
 
-type Population = [Chromosome]
+type Individual = (Chromosome, FitnessScore)
+
+type Population = [Individual]
 
 data CrossoverType =
       HalfPoint
     | OnePoint
-
-
