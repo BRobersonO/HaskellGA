@@ -2,7 +2,8 @@ module Params where
 import CustomTypes (CrossoverType (HalfPoint))
 
 mutationRate :: Double
-mutationRate = 0.001
+mutationRate = 0.0001
+-- annie's was 0.0001 at default
 
 crossoverRate :: Double -- TODO implement this
 crossoverRate = 1.0
