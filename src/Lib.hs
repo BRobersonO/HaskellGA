@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Lib where
 
 import CustomTypes
@@ -7,12 +9,15 @@ import Crossover (crossover)
 import Initialization (initialize)
 import Mutation (mutate)
 
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
 -- run = print "hi"
 run = runRuns initialize Param.numOfRuns
 
 runRuns :: IO Population -> Int -> IO Population
 runRuns pop 0 = pop
-runRuns pop count = runRuns (runGenerations pop Param.numOfGenerations) (count - 1)
+runRuns pop rcount = runRuns (runGenerations pop Param.numOfGenerations) (rcount - 1)
 
 runGenerations :: IO Population -> Int -> IO Population
 runGenerations pop 0     = pop
@@ -27,6 +32,17 @@ createNewPop currentPop newPop count   =
     getChild = do
         parents <- select currentPop
         crossover Param.crossoverType parents
+
+writeTest pop = BL.writeFile "output.csv" $ encode pop
+
+-- writeStats pop = GenStats
+--   { runGen =
+--   , bestInGen
+--   , avgOfGen
+--   , stDv
+--   , ninetyFiveConf
+
+--   }
 
 -- TODO other features:
 -- runRuns function to run x amount of Runs
