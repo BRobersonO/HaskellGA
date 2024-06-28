@@ -23,7 +23,7 @@ numOfGenerations = 100
 -- annie's was 100 at default
 
 numOfRuns :: Int
-numOfRuns = 50
+numOfRuns = 2
 
 {- crossoverTypes include:
     HalfPoint

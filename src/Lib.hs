@@ -13,16 +13,15 @@ import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 
 -- run = print "hi"
-run = runRuns initialize Param.numOfRuns
+run = runRuns Param.numOfRuns
 
-runRuns :: IO Population -> Int -> IO Population
-runRuns pop 0 = pop
-runRuns pop rcount = runRuns (runGenerations pop Param.numOfGenerations) (rcount - 1)
+-- runRuns :: Int -> IO Population
+runRuns rcount = foldr (\x acc -> runGenerations acc Param.numOfGenerations x) initialize [rcount,(rcount - 1)..0]
 
-runGenerations :: IO Population -> Int -> IO Population
-runGenerations pop 0     = pop
-runGenerations pop count =
-  runGenerations (pop >>= (\x -> createNewPop x [] Param.populationSize) >>= mutate) (count - 1)
+runGenerations :: IO Population -> Int -> Int -> IO Population
+runGenerations pop 0 _    = pop
+runGenerations pop count rcount =
+  runGenerations (pop >>= (\x -> createNewPop x [] Param.populationSize) >>= mutate) (count - 1) rcount
 
 createNewPop :: Population -> [IO Individual] -> Int -> IO Population
 createNewPop _          newPop 0       = sequenceA newPop
